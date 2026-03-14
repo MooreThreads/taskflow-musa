@@ -143,7 +143,7 @@ if(TF_BUILD_MUSA)
   if(NOT MUSA_FOUND)
     message(FATAL_ERROR "\nMUSA SDK not found. Set MUSA_HOME or install MUSA SDK.")
   endif()
-  set(MUSA_MCC_FLAGS "-O3 -std=c++20 --gpu-arch=mp_${MUSA_ARCH}" CACHE STRING "MUSA mcc compiler flags")
+  set(MUSA_MCC_FLAGS "-O3;-std=c++20;-fPIE;--offload-arch=mp_${MUSA_ARCH}" CACHE STRING "MUSA mcc compiler flags")
   include_directories(${MUSA_INCLUDE_DIRS})
 endif()
 
