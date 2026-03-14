@@ -60,6 +60,11 @@ if(TF_BUILD_CUDA)
   add_subdirectory(${TF_UTEST_DIR}/cuda)
 endif()
 
+# include MUSA tests
+if(TF_BUILD_MUSA)
+  add_subdirectory(${TF_UTEST_DIR}/musa)
+endif()
+
 # include SYCL tests
 #if(TF_BUILD_SYCL)
 #  add_subdirectory(${TF_UTEST_DIR}/sycl)
