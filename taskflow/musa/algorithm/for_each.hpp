@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../cudaflow.hpp"
+#include "../musaflow.hpp"
 
 /**
 @file taskflow/cuda/algorithm/for_each.hpp
