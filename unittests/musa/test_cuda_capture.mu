@@ -12,7 +12,7 @@ TEST_CASE("cudaFlowCapturer.noEventError") {
     cpt.on([] (musaStream_t stream) {
       testKernel<<<256,256,0,stream>>>();
     });
-    REQUIRE((cudaGetLastError() == musaSuccess));
+    REQUIRE((musaGetLastError() == musaSuccess));
   });
-  REQUIRE((cudaGetLastError() == musaSuccess));
+  REQUIRE((musaGetLastError() == musaSuccess));
 }

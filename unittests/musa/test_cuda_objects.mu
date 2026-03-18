@@ -61,14 +61,14 @@ TEST_CASE("cudaStream" * doctest::timeout(300)) {
   REQUIRE(s1.get() == s1_source);
 
   // query status
-  REQUIRE(cudaStreamQuery(s1.get()) == musaSuccess);
-  REQUIRE(cudaStreamQuery(s2.get()) == musaSuccess);
+  REQUIRE(musaStreamQuery(s1.get()) == musaSuccess);
+  REQUIRE(musaStreamQuery(s2.get()) == musaSuccess);
 
   s1 = std::move(s2);
 
   REQUIRE(s2 == nullptr);
   REQUIRE(s1.get() == s2_source);
-  REQUIRE(cudaStreamQuery(s1.get()) == musaSuccess);
+  REQUIRE(musaStreamQuery(s1.get()) == musaSuccess);
 
   // create a nullstream
   tf::cudaStream s3(std::move(s1));

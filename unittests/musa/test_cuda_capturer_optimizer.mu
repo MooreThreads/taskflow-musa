@@ -162,7 +162,7 @@ void dependencies(OPT_Args ...args) {
 
     int* inputs{nullptr};
     REQUIRE(musaMallocManaged(&inputs, num_partitions * sizeof(int)) == musaSuccess);
-    REQUIRE(cudaMemset(inputs, 0, num_partitions * sizeof(int)) == musaSuccess);
+    REQUIRE(musaMemset(inputs, 0, num_partitions * sizeof(int)) == musaSuccess);
 
     std::vector<std::vector<tf::cudaTask>> tasks;
     tasks.resize(g.get_size());

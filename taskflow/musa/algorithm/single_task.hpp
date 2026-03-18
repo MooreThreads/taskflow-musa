@@ -13,6 +13,14 @@ __global__ void cuda_single_task(C callable) {
   callable();
 }
 
+/**
+@brief launches a single-task kernel using an execution policy
+*/
+template <typename P, typename C>
+void cuda_single_task(P&& p, C c) {
+  cuda_single_task<C><<<1, 1, 0, p.stream()>>>(c);
+}
+
 // Function: single_task
 template <typename Creator, typename Deleter>
 template <typename C>
