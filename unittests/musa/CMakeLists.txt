@@ -8,6 +8,13 @@ list(APPEND TF_MUSA_UNITTESTS
   test_cuda_kmeans
   test_cuda_for_each
   test_cuda_transform
+  #test_cuda_reduce
+  #test_cuda_scan
+  #test_cuda_find
+  #test_cuda_min_max_element
+  #test_cuda_merge
+  #test_cuda_capturer_optimizer
+  #test_cuda_capture
 )
 
 foreach(musatest IN LISTS TF_MUSA_UNITTESTS)
